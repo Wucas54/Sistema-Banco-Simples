@@ -1,44 +1,119 @@
-#  Sistema Bancário Simples em Python
+# Sistema Bancário Simples em Python
 
-Este é um projeto prático desenvolvido em Python que simula as operações básicas de uma conta bancária através do terminal. É ideal para demonstrar conceitos de **lógica de programação**, **funções** e **validação de dados**.
+Este projeto é uma aplicação simples desenvolvida em **Python** que simula operações básicas de uma conta bancária através do terminal.
 
----
+O objetivo principal é praticar conceitos fundamentais de programação como:
 
-##  Funcionalidades
-
-O sistema oferece uma interface interativa com as seguintes opções:
-
-* **1 - Depositar:** Permite adicionar fundos à conta (apenas valores positivos).
-* **2 - Levantar:** Permite retirar dinheiro, com verificação automática de saldo insuficiente.
-* **3 - Ver Saldo:** Exibe o montante atual disponível na conta.
-* **4 - Sair:** Encerra o programa de forma limpa.
+* Estruturas de controlo (`if`, `while`)
+* Funções
+* Validação de dados
+* Tratamento de erros com `try/except`
+* Organização de código
 
 ---
 
-##  Como Executar
+# Funcionalidades
 
-Para correr este projeto, garantem que tens o **Python 3.x** instalado.
+O sistema apresenta um menu interativo com as seguintes opções:
 
-1. Faça o download ou copie o código para um ficheiro chamado `banco.py`.
-2. Executa o programa no terminal
-3. Introduz os valores pedidos
+**1 - Depositar**
+Permite adicionar dinheiro à conta. O programa valida se o valor introduzido é um número válido e se é maior que zero.
+
+**2 - Levantar**
+Permite retirar dinheiro da conta, verificando:
+
+* se o valor é válido
+* se o saldo é suficiente
+
+**3 - Ver saldo**
+Mostra o saldo atual disponível na conta.
+
+**4 - Sair**
+Encerra o programa de forma segura.
 
 ---
 
-## Limitações Conhecidas
+# Validação de Dados
 
-- Não valida entradas inválidas para números (ex: letras causam erro e o programa termina)
+O programa inclui validação para evitar erros comuns do utilizador:
 
-- Não existe forma de sair do programa sem interromper manualmente (Ctrl + C)
+* Impede inserir **letras ou texto** onde é esperado um número
+* Impede valores **negativos ou iguais a zero**
+* Impede levantar dinheiro **acima do saldo disponível**
+
+Essas verificações são feitas utilizando **tratamento de exceções (`try/except`)**.
 
 ---
 
-## Possíveis Melhorias Futuras
+# Como Executar
 
-- Criar interface gráfica ou versão web
+## 1️⃣ Pré-requisitos
 
-- Tratar erros com try/except
+Ter o **Python 3.x** instalado no computador.
 
-- Adicionar opção para sair do programa (q ou exit)
+## 2️⃣ Executar o programa
 
-- Adicionar opções para ver as Transações/limpra Transações
+1. Guarda o código num ficheiro chamado:
+
+```
+banco.py
+```
+
+2. Abre o terminal na pasta do projeto.
+
+3. Executa o comando:
+
+```
+python banco.py
+```
+
+4. Escolhe uma das opções apresentadas no menu.
+
+---
+
+# Exemplo de Execução
+
+```
+=== Conta do Banco ===
+1 - Depositar
+2 - Levantar
+3 - Ver saldo
+4 - Sair
+
+Escolha uma opção: 1
+Quanto queres depositar? 100
+Depósito feito com sucesso!
+```
+
+---
+
+# Estrutura do Código
+
+O programa está dividido em várias funções para melhorar a organização:
+
+* `menu()` → mostra o menu
+* `ler_menu()` → valida a opção escolhida pelo utilizador
+* `depositar(saldo)` → adiciona dinheiro ao saldo
+* `levantar(saldo)` → remove dinheiro do saldo
+* `ver_saldo(saldo)` → mostra o saldo atual
+* `main()` → controla o fluxo principal do programa
+
+---
+
+# Possíveis Melhorias Futuras
+
+Algumas melhorias que podem ser implementadas:
+
+* Guardar o saldo em **ficheiro** para não perder dados ao fechar o programa
+* Criar **histórico de transações**
+* Implementar **interface gráfica**
+* Criar uma **API ou versão web**
+* Adicionar **tipagem (`type hints`)** no código
+
+---
+
+# Objetivo do Projeto
+
+Este projeto foi criado como exercício para praticar programação em Python e desenvolver pensamento lógico na construção de pequenos sistemas.
+
+Ele pode servir como base para projetos mais avançados no futuro.

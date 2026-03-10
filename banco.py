@@ -16,11 +16,14 @@ def ler_menu():
 def depositar(saldo):
     try:
         valor = float(input("Quanto queres depositar? "))
-    except ValueError:
+    except ValueError: 
         print("Tens de colocar números!")
         return saldo
     
-    if valor <= 0: 
+    if valor < 0.01: 
+        print("Valor inválido!")
+        return saldo
+    if valor == 0:
         print("Valor inválido!")
         return saldo
     
@@ -35,6 +38,9 @@ def levantar(saldo):
         print("Tens de colocar números!")
         return saldo
     
+    if valor < 0.01: 
+        print("Valor inválido!")
+        return saldo
     if valor <= 0:
         print("Valor inválido!")
         return saldo
